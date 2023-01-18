@@ -1,0 +1,22 @@
+@use "src/scss/utils" as *;
+
+.Main {
+  padding: rem(110px) 0;
+
+  @include media-max("mobile") {
+    padding: rem(70px) 0;
+  }
+
+  &__filters {
+    display: flex;
+    margin-bottom: rem(40px);
+
+    @include media-max("mobile") {
+      margin-bottom: rem(80px);
+    }
+
+    > * + * {
+      margin-left: rem(12px);
+    }
+  }
+}

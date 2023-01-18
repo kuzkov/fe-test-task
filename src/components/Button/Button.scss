@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "src/scss/variables" as *;
+@use "src/scss/utils" as *;
+
+.Button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: map.get($colors, "black");
+  transition: color 0.2s;
+  font-size: rem(18px);
+  line-height: rem(22px);
+  text-decoration: none;
+
+  &:hover {
+    color: map.get($colors, "dark-red");
+  }
+
+  &__icon {
+    &--right {
+      margin-left: rem(12px);
+    }
+
+    &--left {
+      margin-right: rem(12px);
+    }
+  }
+}

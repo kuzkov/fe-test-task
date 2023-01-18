@@ -1,0 +1,36 @@
+@use "src/scss/utils" as *;
+
+.ProductCard {
+  max-width: rem(270px);
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-weight: 600;
+    font-size: rem(26px);
+    line-height: rem(31px);
+    margin: auto 0 rem(6px);
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: rem(11px);
+  }
+
+  &__preview {
+    margin-bottom: rem(16px);
+    width: 100%;
+    object-fit: cover;
+    height: rem(236px);
+  }
+
+  &__actionsWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > * + * {
+      margin-left: rem(40px);
+    }
+  }
+}

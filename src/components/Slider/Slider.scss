@@ -1,0 +1,71 @@
+@use "src/scss/utils" as *;
+@use "src/scss/variables" as *;
+@use "sass:map";
+
+.Slider {
+  padding-bottom: rem(134px) !important;
+
+  @include media-max("mobile") {
+    padding-bottom: rem(40px) !important;
+  }
+
+  .swiper-pagination {
+    bottom: 0 !important;
+
+    &-bullet {
+      background-color: map.get($colors, "dark-grey");
+
+      &-active {
+        background-color: map.get($colors, "dark-red");
+      }
+
+      @include media-min("mobile") {
+        display: none;
+      }
+    }
+  }
+
+  &__slide {
+    width: auto !important;
+    height: auto !important;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  &__button {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(50px);
+    height: rem(50px);
+    border: 1px solid map.get($colors, "black");
+    border-radius: 9999px;
+    padding: rem(14px);
+    color: map.get($colors, "black");
+    transition: all 0.2s;
+
+    &:hover {
+      color: map.get($colors, "dark-red");
+      border-color: map.get($colors, "dark-red");
+    }
+
+    &:disabled {
+      color: map.get($colors, "dark-grey");
+      border-color: map.get($colors, "dark-grey");
+    }
+
+    @include media-max("mobile") {
+      display: none;
+    }
+
+    &--prev {
+      transform: rotate(180deg);
+      right: rem(60px);
+    }
+  }
+}

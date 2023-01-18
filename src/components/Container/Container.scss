@@ -1,0 +1,9 @@
+@use "src/scss/utils" as *;
+
+$gutters: 24px;
+
+.Container {
+  max-width: rem(1230px + $gutters);
+  margin: 0 auto;
+  padding: 0 rem($gutters);
+}
